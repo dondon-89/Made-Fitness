@@ -1,0 +1,121 @@
+<!DOCTYPE html>  
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+
+    :root {
+      --primary-color: #007BFF;
+      --secondary-color: #6C757D;
+      --background-color: #F8F9FA;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--secondary-color);
+    }
+
+    /* Headings */
+    h1 {
+      font-size: 24px;
+      color: var(--primary-color);
+    }
+
+    h2 {
+      font-size: 18px;
+      color: var(--primary-color);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary-color);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Forms and Inputs */
+    input[type="text"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid var(--secondary-color);
+      border-radius: 5px;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Workouts</a>
+    <a href="#">Nutrition</a>
+    <a href="#">Profile</a>
+  </nav>
+
+  <h1>Made Fitness</h1>
+  <p>Welcome to your personal fitness journey.</p>
+
+  <button class="btn-primary">Get Started</button>
+  <button class="btn-secondary">Cancel</button>
+
+  <h2>User Profile</h2>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your name">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Your password">
+
+    <label for="goals">Fitness Goals:</label>
+    <select id="goals" name="goals">
+      <option value="weight-loss">Weight Loss</option>
+      <option value="muscle-gain">Muscle Gain</option>
+      <option value="healthy-living">Healthy Living</option>
+    </select>
+  </form>
+
+  <footer>
+    &copy; 2023 Made Fitness App
+  </footer>
+</body>
+
+</html>
