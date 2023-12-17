@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Routine Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .workout-details {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em;
+            max-width: 600px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="workout-details">
+        <h2>Workout Routine Details</h2>
+        <div id="workoutDetails"></div>
+    </div>
+
+    <script>
+
+        const workoutData = {
+            title: 'Full Body Workout',
+            exercises: [
+                { name: 'Squats', sets: 3, reps: 12 },
+                { name: 'Push-ups', sets: 3, reps: 10 },
+                { name: 'Plank', sets: 3, duration: '30 seconds' },
+                { name: 'Lunges', sets: 3, reps: 12 },
+                { name: 'Bench Press', sets: 4, reps: 8 },
+                { name: 'Deadlifts', sets: 3, reps: 10 },
+                { name: 'Bicep Curls', sets: 3, reps: 12 },
+                { name: 'Leg Press', sets: 3, reps: 12 },
+                { name: 'Pull-ups', sets: 3, reps: 8 },
+                { name: 'Russian Twists', sets: 3, duration: '45 seconds' },
+
+            ],
+            description: 'A comprehensive full-body workout routine targeting major muscle groups.'
+        };
+
+        // Function to display workout routine details on the page
+        function displayWorkoutDetails() {
+            const workoutDetailsContainer = document.getElementById('workoutDetails');
+
+            // Display workout details
+            workoutDetailsContainer.innerHTML = `
+                <strong>Title:</strong> ${workoutData.title}<br>
+                <strong>Description:</strong> ${workoutData.description}<br><br>
+                <strong>Exercises:</strong>
+                <ul>
+                    ${workoutData.exercises.map(exercise => `
+                        <li>
+                            <strong>${exercise.name}</strong>
+                            <ul>
+                                <li>Sets: ${exercise.sets}</li>
+                                <li>Reps: ${exercise.reps || 'N/A'}</li>
+                                <li>Duration: ${exercise.duration || 'N/A'}</li>
+                            </ul>
+                        </li>
+                    `).join('')}
+                </ul>
+            `;
+        }
+
+        window.onload = displayWorkoutDetails;
+    </script>
+</body>
+
+</html>

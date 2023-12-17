@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Logging Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .workout-form {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="workout-form" id="workoutForm">
+        <h2>Workout Logging Form</h2>
+        <label for="exerciseType">Exercise Type:</label>
+        <input type="text" id="exerciseType" required>
+
+        <label for="duration">Duration (minutes):</label>
+        <input type="number" id="duration" required>
+
+        <label for="notes">Notes:</label>
+        <textarea id="notes" rows="4"></textarea>
+
+        <button onclick="submitWorkout()">Log Workout</button>
+    </div>
+
+    <script>
+        // Function to handle form submission
+        function submitWorkout() {
+            // Get form input values
+            const exerciseType = document.getElementById('exerciseType').value;
+            const duration = document.getElementById('duration').value;
+            const notes = document.getElementById('notes').value;
+
+            // Validate input 
+            if (!exerciseType || !duration) {
+                alert('Exercise type and duration are required!');
+                return;
+            }
+
+            
+            const workoutData = { exerciseType, duration, notes };
+            console.log('Workout Data:', workoutData);
+
+            // Clear form fields
+            document.getElementById('exerciseType').value = '';
+            document.getElementById('duration').value = '';
+            document.getElementById('notes').value = '';
+
+           
+        }
+    </script>
+</body>
+</html>

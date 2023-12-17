@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout History</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .workout-history {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em;
+            max-width: 600px;
+        }
+
+        .workout-entry {
+            border-bottom: 1px solid #ddd;
+            padding: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="workout-history" id="workoutHistory">
+        <h2>Workout History</h2>
+        <div id="workoutList"></div>
+    </div>
+
+    <script>
+        // Simulated workout data (replace this with actual data from your backend)
+        const workoutData = [
+            { exerciseType: '', duration: '', notes: '' },
+            { exerciseType: '', duration: '', notes: '' },
+            // Add more workout entries as needed
+        ];
+
+        // Function to display workout history
+        function displayWorkoutHistory() {
+            const workoutListContainer = document.getElementById('workoutList');
+
+            // Clear previous entries
+            workoutListContainer.innerHTML = '';
+
+            // Display each workout entry
+            workoutData.forEach((workout, index) => {
+                const workoutEntry = document.createElement('div');
+                workoutEntry.classList.add('workout-entry');
+                workoutEntry.innerHTML = `
+                    <strong>Workout #${index + 1}</strong><br>
+                    <strong>Exercise Type:</strong> ${workout.exerciseType}<br>
+                    <strong>Duration:</strong> ${workout.duration} minutes<br>
+                    <strong>Notes:</strong> ${workout.notes}<br>
+                `;
+                workoutListContainer.appendChild(workoutEntry);
+            });
+        }
+
+        // Display workout history on page load
+        window.addEventListener('load', displayWorkoutHistory);
+    </script>
+</body>
+</html>

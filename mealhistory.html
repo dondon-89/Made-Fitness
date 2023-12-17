@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal History</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .meal-history {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em;
+            max-width: 600px;
+        }
+
+        .meal-item {
+            border-bottom: 1px solid #ddd;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="meal-history">
+        <h2>Meal History</h2>
+        <div id="mealList"></div>
+    </div>
+
+    <script>
+        // Sample meal data 
+        const mealData = [
+            { mealName: '', foodItems: '', categories: '' },
+            { mealName: '', foodItems: '', categories: '' },
+            { mealName: '', foodItems: '', categories: '' }
+            // Add more meal items as needed
+        ];
+
+        // Function to display meal items on the page
+        function displayMealHistory() {
+            const mealListContainer = document.getElementById('mealList');
+
+            // Clear existing content
+            mealListContainer.innerHTML = '';
+
+            // Loop through meal data and create HTML for each item
+            mealData.forEach(meal => {
+                const mealItemDiv = document.createElement('div');
+                mealItemDiv.classList.add('meal-item');
+
+                // Display meal details
+                mealItemDiv.innerHTML = `
+                    <div>
+                        <strong>${meal.mealName}</strong><br>
+                        <span>Food Items: ${meal.foodItems}</span><br>
+                        <span>Categories: ${meal.categories}</span>
+                    </div>
+                `;
+
+                mealListContainer.appendChild(mealItemDiv);
+            });
+        }
+
+        // Call the function to display meal history when the page loads
+        window.onload = displayMealHistory;
+    </script>
+</body>
+</html>
